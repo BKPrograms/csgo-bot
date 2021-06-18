@@ -107,7 +107,6 @@ async def weapon(ctx, weapon_name, skin, condition, currency):
     data = getWeaponInfo(weapon_name, skin, condition, currency)
 
     if data.color == GREEN:
-        print('yee')
         f = discord.File(
             os.getcwd() + "\\graph.png",
             filename="graph.png")
@@ -117,7 +116,6 @@ async def weapon(ctx, weapon_name, skin, condition, currency):
         await ctx.send(file=f, embed=data)
         os.remove("graph.png")
     else:
-        print('wrong branch')
         await ctx.send(embed=data)
 
 
